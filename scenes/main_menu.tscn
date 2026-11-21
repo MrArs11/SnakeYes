@@ -1,0 +1,194 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://1ocnsnary588" path="res://assets/BG/MainMenulightBG.png" id="2_bglight"]
+[ext_resource type="Texture2D" uid="uid://du716whqoudb7" path="res://assets/BG/MainMenudarkBG.png" id="3_bgdark"]
+[ext_resource type="Texture2D" uid="uid://c4hihus1s1mug" path="res://assets/Flag/SnakeYes-1.png" id="4_flag1"]
+[ext_resource type="Texture2D" uid="uid://8bhuuqgymndc" path="res://assets/Buttons/Settings_Button.png" id="5_settings"]
+[ext_resource type="Texture2D" uid="uid://dxdleilvpqwji" path="res://assets/Buttons/Light-Dark_Button.png" id="6_themetoggle"]
+[ext_resource type="Texture2D" uid="uid://bk34qtfnuffci" path="res://assets/Buttons/Default_Button.png" id="7_play"]
+[ext_resource type="Texture2D" uid="uid://ba8m6ed8r53p6" path="res://assets/Buttons/DefaultDark_Button.png" id="8_playdark"]
+[ext_resource type="Texture2D" uid="uid://bj8wjmlnda1cg" path="res://assets/Buttons/Shop_Button.png" id="9_shop"]
+[ext_resource type="Texture2D" uid="uid://bk3qchgq2cfr4" path="res://assets/Buttons/ShopDark_Button.png" id="10_shopdark"]
+[ext_resource type="Texture2D" uid="uid://uym50hgvmj63" path="res://assets/Buttons/Skins_Button.png" id="11_skins"]
+[ext_resource type="Texture2D" uid="uid://pprxoi63be64" path="res://assets/Buttons/SkinsDark_Button.png" id="12_skinsdark"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_filter = 2
+texture = ExtResource("2_bglight")
+stretch_mode = 6
+
+[node name="BackgroundDark" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_filter = 2
+texture = ExtResource("3_bgdark")
+stretch_mode = 6
+
+[node name="FlagAnchor" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -355.0
+offset_top = 36.0
+offset_right = 355.0
+offset_bottom = 176.0
+grow_horizontal = 2
+
+[node name="Flag" type="TextureRect" parent="FlagAnchor"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_filter = 2
+texture = ExtResource("4_flag1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 160.0
+texture_filter = 2
+texture_normal = ExtResource("5_settings")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ThemeToggleButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 40.0
+offset_right = -40.0
+offset_bottom = 160.0
+grow_horizontal = 0
+texture_filter = 2
+texture_normal = ExtResource("6_themetoggle")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MenuButtons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 28
+
+[node name="PlayButton" type="TextureButton" parent="MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(504, 120)
+layout_mode = 2
+pivot_offset = Vector2(252, 60)
+texture_filter = 2
+texture_normal = ExtResource("7_play")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuButtons/PlayButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.55, 0.25, 0.2, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 44
+text = "Играть"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopButton" type="TextureButton" parent="MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(504, 120)
+layout_mode = 2
+pivot_offset = Vector2(252, 60)
+texture_filter = 2
+texture_normal = ExtResource("9_shop")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuButtons/ShopButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.55, 0.25, 0.2, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 44
+text = "Магазин"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkinsButton" type="TextureButton" parent="MenuButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(504, 120)
+layout_mode = 2
+pivot_offset = Vector2(252, 60)
+texture_filter = 2
+texture_normal = ExtResource("11_skins")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuButtons/SkinsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.55, 0.25, 0.2, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 44
+text = "Скины"
+horizontal_alignment = 1
+vertical_alignment = 1
